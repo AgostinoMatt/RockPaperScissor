@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/1"
+        android:id="@+id/Rock"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -17,7 +17,7 @@
         tools:layout_editor_absoluteY="160dp" />
 
     <Button
-        android:id="@+id/2"
+        android:id="@+id/Paper"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -28,7 +28,7 @@
         tools:layout_editor_absoluteY="276dp" />
 
     <Button
-        android:id="@+id/3"
+        android:id="@+id/Scissors"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

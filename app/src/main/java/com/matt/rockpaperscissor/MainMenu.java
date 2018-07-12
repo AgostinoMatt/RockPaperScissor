@@ -17,11 +17,19 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
-
+        Button startButton = findViewById(R.id.startButton);
+        startButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-
+        switch (v.getId()) {
+            case R.id.startButton:
+                Intent i = new Intent(this, PlayerOneSelect.class);
+                startActivity(i);
+                break;
+            default:
+                break;
+        }
     }
 }
