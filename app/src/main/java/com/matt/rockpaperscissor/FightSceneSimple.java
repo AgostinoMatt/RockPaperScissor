@@ -2,6 +2,7 @@ package com.matt.rockpaperscissor;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -30,10 +31,10 @@ public class FightSceneSimple extends AppCompatActivity implements View.OnClickL
         winner = findViewById(R.id.winner);
 
 
-
+        Bundle playerOneBundle = getIntent().getBundleExtra("PLAYERONE");
         Bundle playerTwoBundle = getIntent().getBundleExtra("PLAYERTWO");
         int playerTwoMove = playerTwoBundle.getInt("p2Move", 0);
-        int playerOneMove = playerTwoBundle.getInt("p1Move", 0);
+        int playerOneMove = playerOneBundle.getInt("p1Move", 0);
         p1 = new Player("Player 1", playerOneMove);
         p2 = new Player("Player 2", playerTwoMove);
     }
@@ -46,6 +47,7 @@ public class FightSceneSimple extends AppCompatActivity implements View.OnClickL
             default:
                 break;
         }
+
     }
 
     public void show() {
@@ -75,6 +77,7 @@ public class FightSceneSimple extends AppCompatActivity implements View.OnClickL
             default:
                 break;
         }
+        Log.d("Moves", "p1: " + p1.moveNum + " p2: " + p2.moveNum);
     }
 
 }

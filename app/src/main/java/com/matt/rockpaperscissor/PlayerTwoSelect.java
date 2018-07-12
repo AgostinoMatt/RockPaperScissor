@@ -9,7 +9,7 @@ import android.widget.Button;
 import com.matt.rockpapersciccor.R;
 
 public class PlayerTwoSelect extends AppCompatActivity implements View.OnClickListener {
-        int p1 = 0;
+        int p1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,27 +32,30 @@ public class PlayerTwoSelect extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public void onClick(View v) {
-
+        Bundle playerOneBundle = new Bundle();
         Bundle playerTwoBundle = new Bundle();
         switch (v.getId()) {
             case R.id.Rock:
                 Intent i = new Intent(this, FightSceneSimple.class);
                 playerTwoBundle.putInt("p2Move", 1);
-                playerTwoBundle.putInt("p1Move", p1);
+                playerOneBundle.putInt("p1Move", p1);
+                i.putExtra("PLAYERONE", playerOneBundle);
                 i.putExtra("PLAYERTWO", playerTwoBundle);
                 startActivity(i);
                 break;
             case R.id.Paper:
                 Intent j = new Intent(this, FightSceneSimple.class);
                 playerTwoBundle.putInt("p2Move", 2);
-                playerTwoBundle.putInt("p1Move", p1);
+                playerOneBundle.putInt("p1Move", p1);
+                j.putExtra("PLAYERONE", playerOneBundle);
                 j.putExtra("PLAYERTWO", playerTwoBundle);
                 startActivity(j);
                 break;
             case R.id.Scissors:
                 Intent k = new Intent(this, FightSceneSimple.class);
                 playerTwoBundle.putInt("p2Move", 3);
-                playerTwoBundle.putInt("p1Move", p1);
+                playerOneBundle.putInt("p1Move", p1);
+                k.putExtra("PLAYERONE", playerOneBundle);
                 k.putExtra("PLAYERTWO", playerTwoBundle);
                 startActivity(k);
                 break;
