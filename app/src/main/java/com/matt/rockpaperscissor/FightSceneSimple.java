@@ -102,6 +102,7 @@ public class FightSceneSimple extends AppCompatActivity implements View.OnClickL
                     case 2:
                         winner.setText("Player Two Wins!");
                         gameOver();
+                        break;
                     case 3:
                         winner.setText("Player One Wins!");
                         gameOver();
@@ -125,9 +126,11 @@ public class FightSceneSimple extends AppCompatActivity implements View.OnClickL
                                 startActivity(redo);
                             }
                         }, 5000);
+                        break;
                     case 3:
                         winner.setText("Player Two Wins!");
                         gameOver();
+                        break;
                     default:
                         break;
                 }
@@ -141,6 +144,7 @@ public class FightSceneSimple extends AppCompatActivity implements View.OnClickL
                     case 2:
                         winner.setText("Player One Wins!");
                         gameOver();
+                        break;
                     case 3:
                         winner.setText("Draw!");
                         final Intent redo = new Intent(this, PlayerOneSelect.class);
@@ -151,6 +155,7 @@ public class FightSceneSimple extends AppCompatActivity implements View.OnClickL
                                 startActivity(redo);
                             }
                         }, 5000);
+                        break;
                     default:
                         break;
                 }
