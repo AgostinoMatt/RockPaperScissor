@@ -1,6 +1,9 @@
 package com.matt.rockpaperscissor;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -77,7 +80,93 @@ public class FightSceneSimple extends AppCompatActivity implements View.OnClickL
             default:
                 break;
         }
-        Log.d("Moves", "p1: " + p1.moveNum + " p2: " + p2.moveNum);
+        checkWinner();
     }
 
+    public void checkWinner() {
+
+        switch(p1.moveNum){
+            case 1:
+                switch(p2.moveNum) {
+                    case 1:
+                        winner.setText("Draw!");
+                        final Intent redo = new Intent(this, PlayerOneSelect.class);
+                        final Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                startActivity(redo);
+                            }
+                        }, 5000);
+                        break;
+                    case 2:
+                        winner.setText("Player Two Wins!");
+                        gameOver();
+                    case 3:
+                        winner.setText("Player One Wins!");
+                        gameOver();
+                    default:
+                        break;
+                }
+            break;
+            case 2:
+                switch(p2.moveNum) {
+                    case 1:
+                        winner.setText("Player One Wins!");
+                        gameOver();
+                        break;
+                    case 2:
+                        winner.setText("Draw!");
+                        final Intent redo = new Intent(this, PlayerOneSelect.class);
+                        final Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                startActivity(redo);
+                            }
+                        }, 5000);
+                    case 3:
+                        winner.setText("Player Two Wins!");
+                        gameOver();
+                    default:
+                        break;
+                }
+            break;
+            case 3:
+                switch(p2.moveNum) {
+                    case 1:
+                        winner.setText("Player Two Wins!");
+                        gameOver();
+                        break;
+                    case 2:
+                        winner.setText("Player One Wins!");
+                        gameOver();
+                    case 3:
+                        winner.setText("Draw!");
+                        final Intent redo = new Intent(this, PlayerOneSelect.class);
+                        final Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                startActivity(redo);
+                            }
+                        }, 5000);
+                    default:
+                        break;
+                }
+            break;
+        }
+
+    }
+
+    public void gameOver(){
+        final Intent reset = new Intent(this, MainMenu.class);
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                startActivity(reset);
+            }
+        }, 5000);
+        }
 }
