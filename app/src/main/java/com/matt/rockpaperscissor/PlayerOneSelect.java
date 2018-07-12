@@ -33,16 +33,19 @@ public class PlayerOneSelect extends AppCompatActivity implements View.OnClickLi
                 playerOneBundle.putInt("p1Move", 1);
                 i.putExtra("PLAYERONE", playerOneBundle);
                 startActivity(i);
+                break;
             case R.id.Paper:
                 Intent j = new Intent(this, PlayerTwoSelect.class);
                 playerOneBundle.putInt("p1Move", 2);
                 j.putExtra("PLAYERONE", playerOneBundle);
                 startActivity(j);
+                break;
             case R.id.Scissors:
                 Intent k = new Intent(this, PlayerTwoSelect.class);
                 playerOneBundle.putInt("p1Move", 3);
                 k.putExtra("PLAYERONE", playerOneBundle);
                 startActivity(k);
+                break;
             default:
                 break;
         }

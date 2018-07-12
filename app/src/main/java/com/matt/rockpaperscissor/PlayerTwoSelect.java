@@ -41,18 +41,21 @@ public class PlayerTwoSelect extends AppCompatActivity implements View.OnClickLi
                 playerTwoBundle.putInt("p1Move", p1);
                 i.putExtra("PLAYERTWO", playerTwoBundle);
                 startActivity(i);
+                break;
             case R.id.Paper:
                 Intent j = new Intent(this, FightSceneSimple.class);
                 playerTwoBundle.putInt("p2Move", 2);
                 playerTwoBundle.putInt("p1Move", p1);
                 j.putExtra("PLAYERTWO", playerTwoBundle);
                 startActivity(j);
+                break;
             case R.id.Scissors:
                 Intent k = new Intent(this, FightSceneSimple.class);
                 playerTwoBundle.putInt("p2Move", 3);
                 playerTwoBundle.putInt("p1Move", p1);
                 k.putExtra("PLAYERTWO", playerTwoBundle);
                 startActivity(k);
+                break;
             default:
                 break;
         }

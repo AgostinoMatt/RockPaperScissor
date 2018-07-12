@@ -11,25 +11,31 @@ import com.matt.rockpapersciccor.R;
 
 public class FightSceneSimple extends AppCompatActivity implements View.OnClickListener {
     //boolean running = true;
+    Player p1;
+    Player p2;
+    TextView playerOne;
+    TextView playerTwo;
+    TextView winner;
+    Button show;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fight_scene_simple);
 
-        TextView playerOne = findViewById(R.id.player1);
-        TextView playerTwo = findViewById(R.id.player2);
+        playerOne = findViewById(R.id.player1);
+        playerTwo = findViewById(R.id.player2);
         //TextView timer = findViewById(R.id.Timer);
-        Button show = findViewById(R.id.showButton);
+        show = findViewById(R.id.showButton);
         show.setOnClickListener(this);
-        TextView winner = findViewById(R.id.winner);
+        winner = findViewById(R.id.winner);
 
 
 
         Bundle playerTwoBundle = getIntent().getBundleExtra("PLAYERTWO");
         int playerTwoMove = playerTwoBundle.getInt("p2Move", 0);
         int playerOneMove = playerTwoBundle.getInt("p1Move", 0);
-        Toast.makeText(getApplicationContext(),"Moves" + playerOneMove + playerTwoMove, Toast.LENGTH_LONG).show();
-
+        p1 = new Player("Player 1", playerOneMove);
+        p2 = new Player("Player 2", playerTwoMove);
     }
     @Override
     public void onClick(View v) {
@@ -43,7 +49,32 @@ public class FightSceneSimple extends AppCompatActivity implements View.OnClickL
     }
 
     public void show() {
-
+        switch(p1.moveNum){
+            case 1:
+                playerOne.setText("Rock");
+                break;
+            case 2:
+                playerOne.setText("Paper");
+                break;
+            case 3:
+                playerOne.setText("Scissors");
+                break;
+            default:
+                break;
+        }
+        switch(p2.moveNum){
+            case 1:
+                playerTwo.setText("Rock");
+                break;
+            case 2:
+                playerTwo.setText("Paper");
+                break;
+            case 3:
+                playerTwo.setText("Scissors");
+                break;
+            default:
+                break;
+        }
     }
 
 }
