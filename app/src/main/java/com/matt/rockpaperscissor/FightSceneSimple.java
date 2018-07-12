@@ -1,4 +1,4 @@
-package com.matt.rockpapersciccor;
+package com.matt.rockpaperscissor;
 
 public class FightSceneSimple {
 
