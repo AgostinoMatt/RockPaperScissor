@@ -18,11 +18,15 @@
         </activity>
         <activity android:name="com.matt.rockpaperscissor.MainMenu"
             android:screenOrientation="portrait"/>
+        <activity android:name="com.matt.rockpaperscissor.SinglePlayer"
+            android:screenOrientation="portrait"/>
         <activity android:name="com.matt.rockpaperscissor.PlayerOneSelect"
             android:screenOrientation="portrait"/>
         <activity android:name="com.matt.rockpaperscissor.PlayerTwoSelect"
             android:screenOrientation="portrait"/>
         <activity android:name="com.matt.rockpaperscissor.FightSceneSimple"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.matt.rockpaperscissor.FightSceneSingle"
             android:screenOrientation="portrait"/>
 
     </application>

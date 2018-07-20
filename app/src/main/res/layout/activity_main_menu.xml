@@ -9,4 +9,25 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:text="START" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="193dp"
+        android:checked="false"
+        android:text="ToggleButton"
+        android:textOff="Two Player"
+        android:textOn="Single Player" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toggleButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-193dp"
+        android:text="Click to Toggle " />
 </RelativeLayout>
