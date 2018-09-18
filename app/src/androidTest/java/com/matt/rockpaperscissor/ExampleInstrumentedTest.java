@@ -1,4 +1,4 @@
-package com.matt.rockpapersciccor;
+package com.matt.rockpaperscissor;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
